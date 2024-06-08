@@ -27,8 +27,7 @@ def print_authors_with_books():
         book_titles = ', '.join([book.title for book in author.book_set.all()])
         print(f'{author.name}: {book_titles}')
         
-        
-        
+            
 # 6.3
 def print_authors_with_book_count():
     authors_with_book_count = Author.objects.annotate(book_count=Count('book')).order_by('-book_count')
